@@ -1,0 +1,859 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,900;1,700&display=swap");
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+html {
+  height: 100%; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+:root {
+  --text-color: #111;
+  --decoretion-color: #9AB925; }
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto; }
+
+@media (max-width: 1100px) {
+  .container {
+    max-width: 800px; } }
+@media (max-width: 900px) {
+  .container {
+    max-width: 700px; } }
+@media (max-width: 800px) {
+  .container {
+    max-width: 650px; } }
+@media (max-width: 700px) {
+  .container {
+    max-width: 550px; } }
+@media (max-width: 600px) {
+  .container {
+    max-width: 450px; } }
+@media (max-width: 500px) {
+  .container {
+    max-width: 400px; } }
+@media (max-width: 400px) {
+  .container {
+    max-width: 300px; } }
+body {
+  font-family: 'Roboto', sans-serif; }
+
+.ref-hover-effect {
+  position: relative; }
+  .ref-hover-effect::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 0%;
+    background-color: #9AB925;
+    bottom: -5px;
+    left: 0;
+    transition: all 0.3s ease; }
+  .ref-hover-effect:hover::after {
+    width: 100%; }
+
+.button-hover-effect {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--decoretion-color);
+  color: white; }
+  .button-hover-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    transition: all 1s ease; }
+  .button-hover-effect:hover::before {
+    width: 100%; }
+
+.logo {
+  display: flex;
+  align-items: center; }
+  .logo p {
+    position: relative;
+    font-weight: 400;
+    color: #464646; }
+    .logo p span {
+      font-weight: 900;
+      font-size: 18px;
+      color: var(--decoretion-color); }
+  .logo img {
+    width: 70px;
+    height: 70px; }
+
+header {
+  position: fixed;
+  height: 70px;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding-top: 10px;
+  background-color: white; }
+  header .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    header .header-content .menu-list {
+      display: flex;
+      gap: 50px; }
+      header .header-content .menu-list .menu-item {
+        font-size: 20px; }
+    header .header-content .phone {
+      font-size: 18px;
+      font-weight: 600; }
+      header .header-content .phone .icon {
+        margin-right: 10px; }
+    header .header-content .open-menu {
+      display: none;
+      transition: all 0.3s ease; }
+      header .header-content .open-menu:hover {
+        opacity: 0.6; }
+
+.menu-modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 101;
+  padding: 40px;
+  background-color: #111111e3; }
+  .menu-modal .menu-list {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; }
+  .menu-modal a {
+    text-align: center;
+    color: white;
+    font-size: 24px; }
+  .menu-modal .phone {
+    margin-top: 20px;
+    width: 250px; }
+  .menu-modal .close-modal-button {
+    position: absolute;
+    right: 150px; }
+
+@media (max-width: 1100px) {
+  header .header-content .menu-list {
+    gap: 20px; }
+    header .header-content .menu-list .menu-item {
+      font-size: 18px; }
+  header .header-content .phone {
+    font-size: 14px; }
+  header .header-content .logo p {
+    font-size: 14px; }
+  header .header-content .logo img {
+    width: 60px;
+    height: 60px; } }
+@media (max-width: 900px) {
+  header .header-content .menu-list {
+    display: none; }
+  header .header-content .phone {
+    display: none; }
+  header .header-content .open-menu {
+    display: block; } }
+.intro {
+  margin-top: 150px; }
+  .intro .intro-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .intro .intro-content .left {
+      width: 500px; }
+      .intro .intro-content .left .text {
+        font-size: 28px;
+        line-height: 1.5; }
+        .intro .intro-content .left .text span {
+          color: var(--decoretion-color); }
+      .intro .intro-content .left .text2 {
+        font-weight: 400;
+        line-height: 1.4;
+        margin-top: 10px;
+        font-size: 18px; }
+      .intro .intro-content .left .application-button {
+        margin-top: 20px;
+        padding: 20px 30px;
+        border: none;
+        border-radius: 10px;
+        font-size: 20px; }
+    .intro .intro-content .right img {
+      max-width: 500px; }
+
+@media (max-width: 1100px) {
+  .intro .intro-content .left {
+    width: 500px; }
+    .intro .intro-content .left .text {
+      font-size: 22px; }
+    .intro .intro-content .left .text2 {
+      font-size: 16px; }
+    .intro .intro-content .left .application-button {
+      font-size: 16px; }
+  .intro .intro-content .right img {
+    max-width: 450px; } }
+@media (max-width: 900px) {
+  .intro .intro-content .left {
+    width: 500px; }
+    .intro .intro-content .left .text {
+      font-size: 18px; }
+    .intro .intro-content .left .text2 {
+      font-size: 14px; }
+    .intro .intro-content .left .application-button {
+      font-size: 14px; }
+  .intro .intro-content .right img {
+    max-width: 350px; } }
+@media (max-width: 800px) {
+  .intro .intro-content {
+    flex-direction: column; }
+    .intro .intro-content .left .text {
+      font-size: 24px;
+      text-align: center; }
+    .intro .intro-content .left .text2 {
+      text-align: center;
+      font-size: 16px; }
+    .intro .intro-content .left .application-button {
+      margin: auto;
+      display: block;
+      margin-top: 20px;
+      font-size: 16px; }
+    .intro .intro-content .right {
+      order: -1; }
+      .intro .intro-content .right img {
+        max-width: 350px; } }
+@media (max-width: 700px) {
+  .intro .intro-content {
+    flex-direction: column; }
+    .intro .intro-content .left {
+      max-width: 500px; }
+      .intro .intro-content .left .text {
+        font-size: 24px;
+        text-align: center; }
+      .intro .intro-content .left .text2 {
+        text-align: center;
+        font-size: 16px; }
+      .intro .intro-content .left .application-button {
+        font-size: 16px; }
+    .intro .intro-content .right {
+      order: -1; }
+      .intro .intro-content .right img {
+        max-width: 350px; } }
+@media (max-width: 600px) {
+  .intro .intro-content {
+    flex-direction: column; }
+    .intro .intro-content .left {
+      max-width: 400px; }
+      .intro .intro-content .left .text {
+        font-size: 24px;
+        text-align: center; }
+      .intro .intro-content .left .text2 {
+        text-align: center;
+        font-size: 16px; }
+      .intro .intro-content .left .application-button {
+        font-size: 16px; }
+    .intro .intro-content .right {
+      order: -1; }
+      .intro .intro-content .right img {
+        max-width: 350px; } }
+@media (max-width: 500px) {
+  .intro .intro-content {
+    flex-direction: column; }
+    .intro .intro-content .left {
+      max-width: 300px; }
+      .intro .intro-content .left .text {
+        font-size: 20px;
+        text-align: center; }
+      .intro .intro-content .left .text2 {
+        text-align: center;
+        font-size: 16px; }
+      .intro .intro-content .left .application-button {
+        font-size: 12px; }
+    .intro .intro-content .right {
+      order: -1; }
+      .intro .intro-content .right img {
+        max-width: 350px; } }
+.what_is_ecowool {
+  margin-top: 100px; }
+  .what_is_ecowool .what_is_ecowool_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .what_is_ecowool .what_is_ecowool_content .left {
+      max-width: 600px; }
+      .what_is_ecowool .what_is_ecowool_content .left p {
+        font-size: 28px; }
+        .what_is_ecowool .what_is_ecowool_content .left p span {
+          color: #9AB925; }
+      .what_is_ecowool .what_is_ecowool_content .left .advantages {
+        margin-left: 60px;
+        margin-top: 20px;
+        list-style: decimal; }
+        .what_is_ecowool .what_is_ecowool_content .left .advantages li p {
+          margin-top: 10px;
+          font-size: 24px; }
+      .what_is_ecowool .what_is_ecowool_content .left .result_text {
+        margin-top: 20px;
+        font-size: 24px; }
+    .what_is_ecowool .what_is_ecowool_content .right {
+      margin-left: 60px; }
+      .what_is_ecowool .what_is_ecowool_content .right .ecowool_img {
+        animation-name: soaring;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        transform: rotate(15deg);
+        max-width: 250px; }
+
+@media (max-width: 500px) {
+  .right {
+    display: none; } }
+@keyframes soaring {
+  0% {
+    top: 20px; }
+  100% {
+    top: 60px;
+    rotate: 3deg; } }
+.about-ecowool {
+  margin-top: 100px; }
+  .about-ecowool .about-ecowool-content .about-teplovata {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .about-ecowool .about-ecowool-content .about-teplovata img {
+      max-width: 400px; }
+    .about-ecowool .about-ecowool-content .about-teplovata .teplovata-text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 500px; }
+      .about-ecowool .about-ecowool-content .about-teplovata .teplovata-text p.text1 {
+        line-height: 1.4;
+        font-size: 26px; }
+        .about-ecowool .about-ecowool-content .about-teplovata .teplovata-text p.text1 span {
+          color: var(--decoretion-color);
+          font-weight: 700; }
+      .about-ecowool .about-ecowool-content .about-teplovata .teplovata-text p.text2 span {
+        font-weight: 600; }
+  .about-ecowool .about-ecowool-content .title {
+    margin-top: 100px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 700; }
+    .about-ecowool .about-ecowool-content .title span {
+      color: var(--decoretion-color); }
+  .about-ecowool .about-ecowool-content .blocks-list {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    place-self: center;
+    gap: 20px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block {
+      border: 1px solid var(--decoretion-color);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px; }
+      .about-ecowool .about-ecowool-content .blocks-list .block .icon {
+        width: 50px;
+        border: 3px solid var(--decoretion-color);
+        padding: 10px;
+        border-radius: 50%; }
+      .about-ecowool .about-ecowool-content .blocks-list .block .title {
+        margin-top: 20px; }
+      .about-ecowool .about-ecowool-content .blocks-list .block .text {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 14px;
+        color: #606060;
+        line-height: 1.4; }
+
+@media (max-width: 1100px) {
+  .about-ecowool .about-ecowool-content .about-teplovata img {
+    width: 420px;
+    height: 100%; }
+  .about-ecowool .about-ecowool-content .about-teplovata .teplovata-text {
+    gap: 20px;
+    width: 400px; }
+    .about-ecowool .about-ecowool-content .about-teplovata .teplovata-text p.text1 {
+      font-size: 24px; }
+  .about-ecowool .about-ecowool-content .title {
+    font-size: 22px; }
+  .about-ecowool .about-ecowool-content .blocks-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block .icon {
+      width: 50px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block .text {
+      font-size: 14px; } }
+@media (max-width: 900px) {
+  .about-ecowool .about-ecowool-content .about-teplovata img {
+    max-width: 300px; }
+  .about-ecowool .about-ecowool-content .about-teplovata .teplovata-text {
+    gap: 20px;
+    width: 350px; }
+    .about-ecowool .about-ecowool-content .about-teplovata .teplovata-text p.text1 {
+      font-size: 22px; }
+  .about-ecowool .about-ecowool-content .title {
+    font-size: 20px; }
+  .about-ecowool .about-ecowool-content .blocks-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block .icon {
+      width: 50px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block .text {
+      font-size: 14px; } }
+@media (max-width: 800px) {
+  .about-ecowool .about-ecowool-content .about-teplovata {
+    flex-direction: column; }
+    .about-ecowool .about-ecowool-content .about-teplovata .teplovata-text {
+      text-align: center;
+      gap: 20px;
+      width: 300px; }
+  .about-ecowool .about-ecowool-content .title {
+    font-size: 20px; }
+  .about-ecowool .about-ecowool-content .blocks-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block .icon {
+      width: 25px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block .title {
+      font-size: 16px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block .text {
+      font-size: 12px; } }
+@media (max-width: 700px) {
+  .about-ecowool .about-ecowool-content .about-teplovata {
+    flex-direction: column; }
+    .about-ecowool .about-ecowool-content .about-teplovata .teplovata-text {
+      gap: 20px;
+      width: 100%; }
+      .about-ecowool .about-ecowool-content .about-teplovata .teplovata-text p {
+        text-align: center;
+        font-size: 20px; }
+  .about-ecowool .about-ecowool-content .title {
+    font-size: 20px; }
+  .about-ecowool .about-ecowool-content .blocks-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block .icon {
+      width: 25px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block .title {
+      font-size: 16px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block .text {
+      font-size: 12px; } }
+@media (max-width: 600px) {
+  .about-ecowool .about-ecowool-content .about-teplovata {
+    flex-direction: column; }
+    .about-ecowool .about-ecowool-content .about-teplovata .teplovata-text {
+      gap: 20px;
+      width: 100%; }
+      .about-ecowool .about-ecowool-content .about-teplovata .teplovata-text p {
+        text-align: center;
+        font-size: 18px; }
+  .about-ecowool .about-ecowool-content .title {
+    font-size: 20px; }
+  .about-ecowool .about-ecowool-content .blocks-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block .icon {
+      width: 25px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block .title {
+      font-size: 16px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block .text {
+      font-size: 12px; } }
+@media (max-width: 500px) {
+  .about-ecowool .about-ecowool-content .about-teplovata {
+    flex-direction: column; }
+    .about-ecowool .about-ecowool-content .about-teplovata .teplovata-text {
+      gap: 20px;
+      width: 100%; }
+      .about-ecowool .about-ecowool-content .about-teplovata .teplovata-text p {
+        text-align: center;
+        font-size: 18px; }
+  .about-ecowool .about-ecowool-content .title {
+    font-size: 20px; }
+  .about-ecowool .about-ecowool-content .blocks-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block .icon {
+      width: 25px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block .title {
+      font-size: 16px; }
+    .about-ecowool .about-ecowool-content .blocks-list .block .text {
+      font-size: 12px; } }
+.advantages {
+  margin-top: 160px; }
+  .advantages .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px; }
+    .advantages .content p {
+      position: relative;
+      border: solid 3px var(--decoretion-color);
+      padding: 20px;
+      text-align: left;
+      border-radius: 20px;
+      font-size: 20px;
+      color: #1a1a1a; }
+      .advantages .content p::after {
+        position: absolute;
+        top: -30px;
+        left: -30px;
+        padding: 20px;
+        font-size: 24px;
+        width: 15px;
+        height: 15px;
+        background-color: white;
+        color: #9AB925;
+        border: 2px solid var(--decoretion-color);
+        border-radius: 50%; }
+      .advantages .content p:nth-child(1)::after {
+        content: "1"; }
+      .advantages .content p:nth-child(2)::after {
+        content: "2"; }
+      .advantages .content p:nth-child(3)::after {
+        content: "3"; }
+      .advantages .content p:nth-child(4)::after {
+        content: "4"; }
+
+@media (max-width: 1100px) {
+  .advantages .content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px; }
+    .advantages .content p {
+      font-size: 18px; }
+      .advantages .content p::after {
+        padding: 20px;
+        font-size: 24px;
+        width: 15px;
+        height: 15px; } }
+@media (max-width: 900px) {
+  .advantages .content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px; }
+    .advantages .content p {
+      font-size: 16px; }
+      .advantages .content p::after {
+        padding: 15px;
+        font-size: 20px;
+        width: 10px;
+        height: 10px; } }
+@media (max-width: 800px) {
+  .advantages .content {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px; }
+    .advantages .content p {
+      font-size: 18px; }
+      .advantages .content p::after {
+        padding: 15px;
+        font-size: 20px;
+        width: 10px;
+        height: 10px; } }
+@media (max-width: 700px) {
+  .advantages .content {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px; }
+    .advantages .content p {
+      font-size: 16px; }
+      .advantages .content p::after {
+        padding: 15px;
+        font-size: 20px;
+        width: 10px;
+        height: 10px; } }
+@media (max-width: 600px) {
+  .advantages .content {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px; }
+    .advantages .content p {
+      font-size: 16px; }
+      .advantages .content p::after {
+        padding: 15px;
+        font-size: 20px;
+        width: 10px;
+        height: 10px; } }
+@media (max-width: 500px) {
+  .advantages .content {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px; }
+    .advantages .content p {
+      font-size: 16px; }
+      .advantages .content p::after {
+        padding: 15px;
+        font-size: 20px;
+        width: 10px;
+        height: 10px; } }
+.application {
+  margin-top: 150px;
+  padding-bottom: 100px; }
+  .application .form .title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    padding: 20px;
+    color: white;
+    background-color: var(--decoretion-color); }
+  .application .form .calc {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    margin-top: 80px;
+    border-radius: 20px;
+    border: 3px solid var(--decoretion-color); }
+    .application .form .calc .calc-place {
+      display: flex;
+      justify-content: space-between; }
+    .application .form .calc .inputs .input-box p {
+      margin-top: 20px; }
+    .application .form .calc .inputs .input-box input {
+      margin-top: 30px;
+      width: 400px; }
+    .application .form .calc .inputs .input-box input[type='range'] {
+      height: 3px;
+      accent-color: var(--decoretion-color); }
+    .application .form .calc .results .result-title {
+      margin-top: 0;
+      margin-bottom: 30px;
+      font-size: 22px;
+      font-weight: 800;
+      color: #4b4b4b;
+      text-transform: uppercase; }
+    .application .form .calc .results p {
+      margin-top: 25px; }
+    .application .form .calc .results .price {
+      width: 100px;
+      text-align: center;
+      font-weight: 600;
+      padding-bottom: 5px;
+      border-bottom: #9AB925 solid 3px; }
+    .application .form .calc .contacts {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px; }
+      .application .form .calc .contacts .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; }
+        .application .form .calc .contacts .inputs input {
+          max-width: 200px;
+          font-size: 16px;
+          padding: 10px;
+          border: solid 1px black;
+          border-radius: 10px; }
+      .application .form .calc .contacts .enter {
+        border-radius: 10px;
+        width: 200px;
+        padding: 20px;
+        font-size: 16px;
+        border: none; }
+
+@media (max-width: 700px) {
+  .application .form .title {
+    font-size: 28px; }
+  .application .form .calc {
+    max-width: 600px;
+    padding: 40px; }
+    .application .form .calc .inputs .input-box input {
+      margin-top: 30px;
+      width: 300px; }
+    .application .form .calc .results .result-title {
+      font-size: 22px; }
+    .application .form .calc .results .price {
+      width: 100px; }
+    .application .form .calc .contacts {
+      margin-top: 40px;
+      gap: 10px; }
+      .application .form .calc .contacts input {
+        font-size: 12px;
+        padding: 10px; }
+      .application .form .calc .contacts .enter {
+        width: 200px;
+        padding: 10px;
+        font-size: 16px; } }
+@media (max-width: 600px) {
+  .application .form .title {
+    font-size: 26px; }
+  .application .form .calc {
+    max-width: 600px;
+    padding: 40px; }
+    .application .form .calc .inputs .input-box input {
+      margin-top: 30px;
+      width: 200px; }
+    .application .form .calc .results .result-title {
+      font-size: 22px; }
+    .application .form .calc .results .price {
+      width: 100px; }
+    .application .form .calc .contacts {
+      margin-top: 40px;
+      display: flex;
+      gap: 10px; }
+      .application .form .calc .contacts input {
+        font-size: 12px;
+        padding: 5px;
+        width: 120px; }
+      .application .form .calc .contacts .enter {
+        width: 200px;
+        padding: 10px;
+        font-size: 14px; } }
+@media (max-width: 500px) {
+  .application .form .title {
+    font-size: 24px; }
+  .application .form .calc {
+    max-width: 600px;
+    padding: 40px; }
+    .application .form .calc .inputs .input-box p {
+      font-size: 14px; }
+    .application .form .calc .inputs .input-box input {
+      margin-top: 30px;
+      width: 150px; }
+    .application .form .calc .results .result-title {
+      font-size: 16px; }
+    .application .form .calc .results .price {
+      width: 100px; }
+    .application .form .calc .contacts {
+      margin-top: 40px;
+      gap: 10px; }
+      .application .form .calc .contacts input {
+        font-size: 12px;
+        padding: 5px;
+        width: 90px; }
+      .application .form .calc .contacts .enter {
+        width: 200px;
+        padding: 10px;
+        font-size: 14px; } }
+@media (max-width: 450px) {
+  .application .form .title {
+    font-size: 24px; }
+  .application .form .calc {
+    margin-top: 20px;
+    max-width: 600px;
+    padding: 20px; }
+    .application .form .calc .calc-place {
+      flex-direction: column; }
+    .application .form .calc .inputs .input-box {
+      max-width: 150px;
+      margin: 30px auto; }
+      .application .form .calc .inputs .input-box p {
+        text-align: center; }
+      .application .form .calc .inputs .input-box input {
+        text-align: center;
+        margin-top: 30px; }
+    .application .form .calc .results {
+      margin-top: 30px;
+      text-align: center; }
+      .application .form .calc .results .result-title {
+        font-size: 16px; }
+      .application .form .calc .results .price {
+        max-width: 100px;
+        margin: 20px auto; }
+    .application .form .calc .contacts {
+      margin-top: 40px;
+      gap: 10px;
+      flex-direction: column; }
+      .application .form .calc .contacts input {
+        font-size: 10px;
+        padding: 5px;
+        width: 150px; }
+      .application .form .calc .contacts .enter {
+        width: 120px;
+        padding: 10px;
+        font-size: 14px; } }
+footer {
+  background-color: #34362e;
+  padding: 40px; }
+  footer .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    footer .footer-content .socials {
+      display: flex;
+      gap: 20px; }
+      footer .footer-content .socials .social {
+        width: 30px;
+        height: 30px;
+        border: 2px solid var(--decoretion-color);
+        padding: 10px;
+        border-radius: 50%;
+        transition: all 0.3s ease; }
+        footer .footer-content .socials .social:hover {
+          transform: scale(1.1); }
+        footer .footer-content .socials .social img {
+          width: 100%; }
+    footer .footer-content .phones .phone {
+      margin-top: 10px; }
+      footer .footer-content .phones .phone:hover a {
+        color: darkgray; }
+      footer .footer-content .phones .phone a {
+        color: white;
+        transition: all 0.3s ease; }
+      footer .footer-content .phones .phone .icon {
+        margin-right: 10px; }
+
+@media (max-width: 600px) {
+  footer .footer-content {
+    flex-direction: column;
+    gap: 20px; }
+    footer .footer-content .socials {
+      gap: 10px; }
+      footer .footer-content .socials .social {
+        width: 15px;
+        height: 15px; }
+    footer .footer-content .phones .phone {
+      margin-top: 10px; }
+      footer .footer-content .phones .phone a {
+        font-size: 14px;
+        color: white;
+        transition: all 0.3s ease; } }
+@media (max-width: 500px) {
+  footer .footer-content .socials {
+    gap: 10px; }
+    footer .footer-content .socials .social {
+      width: 15px;
+      height: 15px; }
+  footer .footer-content .phones .phone {
+    margin-top: 10px; }
+    footer .footer-content .phones .phone a {
+      font-size: 14px;
+      color: white;
+      transition: all 0.3s ease; } }
